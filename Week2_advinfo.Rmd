@@ -1,0 +1,43 @@
+---
+title: "AdvInfo_Week_2_assignment"
+output: html_document
+---
+
+  ```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate) #Answer to Q1 in hw.
+reticulate::use_python("/usr/bin/python3") #I used the command 'which python3' from my terminal to find the path.
+```
+
+```{r}
+library(nycflights13)
+data(flights)
+```
+
+```{python}
+import pandas
+print(type(r.flights))
+print(r.flights)
+```
+
+```{r}
+data(mtcars)
+```
+
+```{python}
+print(r.mtcars.head())
+```
+
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+g = sns.FacetGrid(r.mtcars, col="cyl")
+g.map(sns.scatterplot,"wt","mpg");
+plt.show()
+```
+
+```{r}
+#The r console appears if you get rid of the semicolon.
+#{r setup, include=TRUE} makes the Rmd print the code.
+#I set to true because my answers to the HW are in comments. 
+```
